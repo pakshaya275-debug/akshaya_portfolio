@@ -2,617 +2,1543 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Akshaya P — Third-year Integrated M.Tech Software Engineering student at VIT Vellore, exploring web development, data analytics and AI." />
-  <meta name="theme-color" content="#070a12" />
-  <meta property="og:title" content="Akshaya P — Software Engineering Student" />
-  <meta property="og:description" content="Portfolio of Akshaya P — web development, data analytics, software engineering and AI." />
-  <meta property="og:type" content="website" />
-  <title>Akshaya P — Software Engineering · Web · Data · AI</title>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <meta
+    name="description"
+    content="Portfolio of Akshaya P — Software Engineering student at VIT Vellore exploring web development, data analytics and AI."
+  />
+
+  <meta name="author" content="Akshaya P" />
+
+  <meta
+    property="og:title"
+    content="Akshaya P — Software Engineering Student"
+  />
+
+  <meta
+    property="og:description"
+    content="Personal portfolio of Akshaya P, a Software Engineering student at VIT Vellore."
+  />
+
+  <meta property="og:type" content="website" />
+
+  <title>Akshaya P — Software Engineering Student</title>
 
   <style>
-    :root {
-      --bg: #070a12;
-      --panel: rgba(13, 18, 31, .72);
-      --line: rgba(148, 163, 184, .13);
-      --muted: #94a3b8;
-      --accent: #7dd3fc;
-      --accent2: #a78bfa;
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background:
-        radial-gradient(circle at 15% 10%, rgba(56,189,248,.09), transparent 28rem),
-        radial-gradient(circle at 85% 30%, rgba(139,92,246,.08), transparent 30rem),
-        var(--bg);
-      color: #f8fafc;
-      overflow-x: hidden;
+      background: #fafafa;
+      color: #171717;
+      font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
-    .mono { font-family: "DM Mono", monospace; }
-    .grid-bg {
-      background-image:
-        linear-gradient(rgba(148,163,184,.045) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(148,163,184,.045) 1px, transparent 1px);
-      background-size: 48px 48px;
-      mask-image: linear-gradient(to bottom, black, transparent 80%);
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    .glass {
-      background: rgba(7,10,18,.72);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid var(--line);
+
+    a:hover {
+      color: #1f4f9a;
     }
-    .gradient-text {
-      background: linear-gradient(110deg, #f8fafc 0%, #7dd3fc 48%, #a78bfa 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+
+    img {
+      max-width: 100%;
+      display: block;
     }
-    .gradient-line {
-      background: linear-gradient(90deg, #38bdf8, #a78bfa, transparent);
+
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    :root {
+      --background: #fafafa;
+      --text: #171717;
+      --muted: #666666;
+      --light-muted: #888888;
+      --line: #e5e5e5;
+      --accent: #1f4f9a;
+
+      --max-width: 1080px;
+
+      --serif:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      --sans:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
     }
-    .card {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(15,23,42,.72), rgba(7,10,18,.72));
-      transition: transform .35s ease, border-color .35s ease, box-shadow .35s ease;
+
+
+    /* =====================================================
+       COMMON
+    ===================================================== */
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--max-width)
+      );
+
+      margin: 0 auto;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(125,211,252,.28);
-      box-shadow: 0 24px 70px rgba(0,0,0,.28);
+
+    section {
+      padding: 110px 0;
+      border-top: 1px solid var(--line);
     }
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .7s ease, transform .7s ease;
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+
+      background: rgba(250, 250, 250, 0.94);
+
+      border-bottom: 1px solid var(--line);
+
+      backdrop-filter: blur(10px);
     }
-    .reveal.show { opacity: 1; transform: translateY(0); }
-    .orb {
-      animation: drift 7s ease-in-out infinite;
+
+    nav {
+      min-height: 68px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-    @keyframes drift {
-      0%,100% { transform: translate3d(0,0,0); }
-      50% { transform: translate3d(0,-18px,0); }
+
+    .logo {
+      font-size: 0.95rem;
+      font-weight: 750;
+      letter-spacing: 0.05em;
     }
-    .cursor-dot {
-      width: 7px; height: 7px; border-radius: 999px;
-      background: #7dd3fc; box-shadow: 0 0 18px #7dd3fc;
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      font-size: 0.9rem;
+      color: #555;
     }
-    .project-number {
-      font-family: "DM Mono", monospace;
-      letter-spacing: .12em;
-      color: #64748b;
+
+    .nav-links a {
+      position: relative;
+      padding: 8px 0;
     }
-    .skill {
-      border: 1px solid rgba(148,163,184,.14);
-      background: rgba(15,23,42,.55);
-      transition: .25s ease;
+
+    .nav-links a::after {
+      content: "";
+
+      position: absolute;
+      left: 0;
+      bottom: 0;
+
+      width: 0;
+      height: 1px;
+
+      background: var(--accent);
+
+      transition: width 0.25s ease;
     }
-    .skill:hover {
-      border-color: rgba(125,211,252,.32);
-      background: rgba(14,28,45,.75);
-    }
-    .nav-link.active { color: #fff; }
-    .nav-link.active::after {
+
+    .nav-links a:hover::after {
       width: 100%;
     }
-    .nav-link {
-      position: relative;
+
+    .menu-button {
+      display: none;
+
+      border: none;
+      background: transparent;
+
+      font-size: 1.4rem;
+
+      cursor: pointer;
     }
-    .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0; right: 0; bottom: -8px;
-      height: 1px; width: 0;
-      background: linear-gradient(90deg,#7dd3fc,#a78bfa);
-      transition: width .25s ease;
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+      min-height: 650px;
+
+      display: flex;
+      align-items: center;
+
+      padding: 110px 0;
     }
-    .mobile-open { display: flex !important; }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+
+    .eyebrow {
+      margin-bottom: 22px;
+
+      color: var(--muted);
+
+      font-size: 0.8rem;
+      font-weight: 650;
+
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 850px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        3.5rem,
+        8vw,
+        6.5rem
+      );
+
+      font-weight: 500;
+
+      line-height: 0.98;
+
+      letter-spacing: -0.045em;
+    }
+
+    .hero-description {
+      max-width: 620px;
+
+      margin-top: 32px;
+
+      color: #555;
+
+      font-size: 1.1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 10px 24px;
+
+      margin-top: 35px;
+
+      color: #444;
+
+      font-size: 0.9rem;
+    }
+
+    .hero-meta span::before {
+      content: "•";
+
+      margin-right: 9px;
+
+      color: var(--accent);
+    }
+
+
+    /* =====================================================
+       SECTION HEADER
+    ===================================================== */
+
+    .section-header {
+      display: grid;
+
+      grid-template-columns: 190px 1fr;
+
+      gap: 50px;
+
+      margin-bottom: 60px;
+    }
+
+    .section-number {
+      padding-top: 7px;
+
+      color: var(--muted);
+
+      font-size: 0.76rem;
+      font-weight: 700;
+
+      letter-spacing: 0.12em;
+
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+
+      font-size: clamp(
+        2.3rem,
+        4vw,
+        3.5rem
+      );
+
+      font-weight: 500;
+
+      line-height: 1.08;
+
+      letter-spacing: -0.025em;
+    }
+
+    .section-description {
+      max-width: 650px;
+
+      margin-top: 18px;
+
+      color: var(--muted);
+    }
+
+
+    /* =====================================================
+       PROJECTS
+    ===================================================== */
+
+    .projects {
+      display: grid;
+    }
+
+    .project {
+      display: grid;
+
+      grid-template-columns:
+        110px
+        1fr
+        180px;
+
+      gap: 30px;
+
+      padding: 38px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .project:first-child {
+      padding-top: 0;
+
+      border-top: none;
+    }
+
+    .project-number {
+      padding-top: 6px;
+
+      color: #999;
+
+      font-size: 0.82rem;
+    }
+
+    .project h3 {
+      font-family: var(--serif);
+
+      font-size: 2rem;
+
+      font-weight: 500;
+
+      line-height: 1.2;
+    }
+
+    .project-description {
+      max-width: 650px;
+
+      margin: 13px 0 20px;
+
+      color: var(--muted);
+    }
+
+    .project-link {
+      padding-top: 7px;
+
+      font-size: 0.88rem;
+
+      text-decoration: underline;
+
+      text-decoration-thickness: 1px;
+
+      text-underline-offset: 5px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 5px 9px;
+
+      border: 1px solid #dcdcdc;
+
+      border-radius: 2px;
+
+      color: #555;
+
+      font-size: 0.74rem;
+    }
+
+
+    /* =====================================================
+       ABOUT
+    ===================================================== */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+    }
+
+    .about-text p {
+      max-width: 650px;
+
+      margin-bottom: 20px;
+
+      color: #4f4f4f;
+
+      font-size: 1.02rem;
+    }
+
+    .details {
+      display: grid;
+    }
+
+    .detail {
+      display: grid;
+
+      grid-template-columns: 145px 1fr;
+
+      gap: 20px;
+
+      padding: 22px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .detail:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .detail-label {
+      color: var(--muted);
+
+      font-size: 0.84rem;
+    }
+
+    .detail-value {
+      font-size: 0.95rem;
+    }
+
+
+    /* =====================================================
+       SKILLS
+    ===================================================== */
+
+    .skills-list {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      border-top: 1px solid var(--line);
+    }
+
+    .skill {
+      padding: 23px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      font-size: 0.98rem;
+    }
+
+    .skill:not(:nth-child(3n + 1)) {
+      padding-left: 30px;
+
+      border-left: 1px solid var(--line);
+    }
+
+
+    /* =====================================================
+       CERTIFICATIONS
+    ===================================================== */
+
+    .certifications {
+      display: grid;
+    }
+
+    .certification {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        170px;
+
+      gap: 20px;
+
+      padding: 23px 0;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .certification:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .certification-name {
+      font-weight: 600;
+    }
+
+    .certification-provider {
+      color: var(--muted);
+
+      font-size: 0.9rem;
+    }
+
+    .certification-type {
+      color: var(--muted);
+
+      font-size: 0.88rem;
+
+      text-align: right;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 80px;
+
+      align-items: end;
+    }
+
+    .contact-title {
+      font-family: var(--serif);
+
+      font-size: clamp(
+        2.8rem,
+        5vw,
+        4.7rem
+      );
+
+      font-weight: 500;
+
+      line-height: 1;
+    }
+
+    .contact-description {
+      max-width: 450px;
+
+      margin-top: 20px;
+
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: grid;
+    }
+
+    .contact-link {
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 18px 0;
+
+      border-top: 1px solid var(--line);
+
+      font-size: 0.95rem;
+    }
+
+    .contact-link:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-arrow {
+      color: var(--muted);
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+      padding: 30px 0;
+
+      border-top: 1px solid var(--line);
+
+      color: #777;
+
+      font-size: 0.8rem;
+    }
+
+    .footer-content {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+
+    /* =====================================================
+       ANIMATION
+    ===================================================== */
+
+    .fade-in {
+      opacity: 0;
+
+      transform: translateY(15px);
+
+      transition:
+        opacity 0.65s ease,
+        transform 0.65s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+
+      transform: translateY(0);
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 800px) {
+
+      .container {
+        width: min(
+          calc(100% - 30px),
+          var(--max-width)
+        );
+      }
+
+      .hero {
+        min-height: 570px;
+
+        padding: 80px 0;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 68px;
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 10px 15px 18px;
+
+        background: var(--background);
+
+        border-bottom: 1px solid var(--line);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      section {
+        padding: 75px 0;
+      }
+
+      .section-header {
+        grid-template-columns: 1fr;
+
+        gap: 24px;
+
+        margin-bottom: 42px;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+      }
+
+      .project {
+        grid-template-columns:
+          48px
+          1fr;
+
+        gap: 16px;
+      }
+
+      .project-link {
+        grid-column: 2;
+
+        padding-top: 0;
+      }
+
+      .skills-list {
+        grid-template-columns:
+          1fr
+          1fr;
+      }
+
+      .skill:not(:nth-child(3n + 1)) {
+        padding-left: 0;
+
+        border-left: none;
+      }
+
+      .skill:nth-child(even) {
+        padding-left: 22px;
+
+        border-left: 1px solid var(--line);
+      }
+
+      .certification {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+      }
+
+      .certification-type {
+        text-align: left;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+
+
+    @media (max-width: 500px) {
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .skills-list {
+        grid-template-columns: 1fr;
+      }
+
+      .skill:nth-child(even) {
+        padding-left: 0;
+
+        border-left: none;
+      }
     }
   </style>
 </head>
 
-<body class="font-sans antialiased">
-  <div class="fixed inset-0 grid-bg pointer-events-none -z-10"></div>
 
-  <!-- NAV -->
-  <header class="fixed top-0 left-0 right-0 z-50">
-    <nav id="navbar" class="glass">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-        <a href="#home" class="font-extrabold tracking-tight text-lg">
-          A<span class="text-sky-300">.</span>P
+<body>
+
+  <!-- =====================================================
+       NAVIGATION
+  ====================================================== -->
+
+  <header>
+
+    <div class="container">
+
+      <nav>
+
+        <a
+          href="#top"
+          class="logo"
+          aria-label="Akshaya P home"
+        >
+          AKSHAYA P
         </a>
 
-        <div id="desktopNav" class="hidden md:flex items-center gap-8 text-sm text-slate-400">
-          <a class="nav-link hover:text-white transition" href="#about">About</a>
-          <a class="nav-link hover:text-white transition" href="#skills">Skills</a>
-          <a class="nav-link hover:text-white transition" href="#projects">Projects</a>
-          <a class="nav-link hover:text-white transition" href="#education">Education</a>
-          <a class="nav-link hover:text-white transition" href="#contact">Contact</a>
-        </div>
-
-        <div class="hidden md:flex items-center gap-3">
-          <a href="assets/resume/Akshaya_P_Resume.pdf" download
-             class="rounded-full border border-slate-700 px-4 py-2 text-sm font-medium hover:border-sky-400/50 hover:text-sky-200 transition">
-            Resume
-          </a>
-          <a href="https://github.com/pakshaya275-debug" target="_blank" rel="noreferrer"
-             class="rounded-full bg-white text-slate-950 px-4 py-2 text-sm font-semibold hover:bg-sky-100 transition">
-            GitHub ↗
-          </a>
-        </div>
-
-        <button id="menuBtn" class="md:hidden p-2 text-slate-300" aria-label="Open menu" aria-expanded="false">
-          <i data-lucide="menu"></i>
+        <button
+          class="menu-button"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          ☰
         </button>
-      </div>
 
-      <div id="mobileMenu" class="hidden md:hidden border-t border-slate-800/70 px-5 py-5">
-        <div class="flex flex-col gap-5 text-sm text-slate-300">
+        <div class="nav-links">
+
+          <a href="#work">Work</a>
+
           <a href="#about">About</a>
+
           <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
+
+          <a href="#certifications">
+            Certifications
+          </a>
+
           <a href="#contact">Contact</a>
-          <a href="assets/resume/Akshaya_P_Resume.pdf" download class="text-sky-300">Download Resume</a>
+
         </div>
-      </div>
-    </nav>
+
+      </nav>
+
+    </div>
+
   </header>
 
-  <main id="home">
-    <!-- HERO -->
-    <section class="min-h-screen flex items-center pt-28 pb-20 px-5 sm:px-8">
-      <div class="max-w-6xl mx-auto w-full">
-        <div class="grid lg:grid-cols-[1.15fr_.85fr] gap-14 items-center">
-          <div class="reveal">
-            <div class="inline-flex items-center gap-3 rounded-full border border-slate-700/80 bg-slate-900/50 px-4 py-2 text-xs text-slate-300 mono mb-7">
-              <span class="cursor-dot"></span>
-              THIRD YEAR · VIT VELLORE
-            </div>
 
-            <p class="text-slate-400 text-sm mb-4">Hi, I'm</p>
-            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[.98]">
-              Akshaya <span class="gradient-text">P.</span>
-            </h1>
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
 
-            <h2 class="mt-6 text-xl sm:text-2xl text-slate-200 font-medium max-w-2xl">
-              Software engineering student building for the web and exploring <span class="text-sky-300">data & AI.</span>
+  <main id="top">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section
+      class="hero"
+      style="border-top: none;"
+    >
+
+      <div class="container fade-in">
+
+        <p class="eyebrow">
+          Software Engineering · VIT Vellore
+        </p>
+
+        <h1>
+          I build things<br />
+          for the web.
+        </h1>
+
+        <p class="hero-description">
+          I’m Akshaya, a third-year Integrated M.Tech
+          Software Engineering student exploring web
+          development, data analytics and AI through
+          practical projects.
+        </p>
+
+        <div class="hero-meta">
+
+          <span>VIT Vellore</span>
+
+          <span>5th Semester</span>
+
+          <span>
+            Open to learning & opportunities
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         PROJECTS
+    ==================================================== -->
+
+    <section id="work">
+
+      <div class="container">
+
+        <div class="section-header fade-in">
+
+          <div class="section-number">
+            01 / Selected work
+          </div>
+
+          <div>
+
+            <h2 class="section-title">
+              Projects I’m building and learning from.
             </h2>
 
-            <p class="mt-6 text-slate-400 leading-8 max-w-2xl text-base sm:text-lg">
-              I'm an Integrated M.Tech Software Engineering student at VIT Vellore,
-              interested in web development, data analytics and practical AI-powered applications.
-              I enjoy turning ideas into useful, well-designed software.
+            <p class="section-description">
+              Two ongoing projects reflecting my current
+              interests in interactive web applications,
+              AI concepts and practical problem solving.
             </p>
 
-            <div class="mt-9 flex flex-wrap gap-3">
-              <a href="#projects" class="inline-flex items-center gap-2 rounded-full bg-white text-slate-950 px-6 py-3 font-semibold hover:bg-sky-100 transition">
-                Explore my work <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
-              </a>
-              <a href="mailto:pakshaya275@gmail.com" class="inline-flex items-center gap-2 rounded-full border border-slate-700 px-6 py-3 font-semibold text-slate-200 hover:border-sky-400/50 hover:text-sky-200 transition">
-                Let's connect <i data-lucide="mail" class="w-4 h-4"></i>
-              </a>
-            </div>
-
-            <div class="mt-10 flex flex-wrap gap-6 text-sm text-slate-500">
-              <a href="https://github.com/pakshaya275-debug" target="_blank" rel="noreferrer" class="hover:text-sky-300 transition">GitHub ↗</a>
-              <a href="https://www.linkedin.com/in/akshaya-p-80028a31b" target="_blank" rel="noreferrer" class="hover:text-sky-300 transition">LinkedIn ↗</a>
-              <span>Vellore, India</span>
-            </div>
           </div>
 
-          <div class="reveal relative hidden lg:block">
-            <div class="orb relative mx-auto w-[360px] h-[360px]">
-              <div class="absolute inset-0 rounded-full bg-sky-400/10 blur-3xl"></div>
-              <div class="absolute inset-8 rounded-full border border-sky-300/10"></div>
-              <div class="absolute inset-16 rounded-full border border-violet-300/10"></div>
-              <div class="absolute inset-24 rounded-full border border-slate-600/40"></div>
-
-              <div class="absolute inset-[100px] rounded-3xl glass flex flex-col items-center justify-center text-center shadow-2xl">
-                <div class="mono text-xs text-sky-300 mb-3">BUILD / LEARN / ITERATE</div>
-                <div class="text-5xl font-extrabold tracking-tight">A<span class="text-sky-300">P</span></div>
-                <div class="mt-3 text-sm text-slate-500">Software · Data · AI</div>
-              </div>
-
-              <div class="absolute top-8 right-8 rounded-full border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs text-slate-300 mono">
-                Python
-              </div>
-              <div class="absolute bottom-10 left-4 rounded-full border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs text-slate-300 mono">
-                React
-              </div>
-              <div class="absolute bottom-5 right-8 rounded-full border border-slate-700 bg-slate-950/80 px-3 py-2 text-xs text-slate-300 mono">
-                Analytics
-              </div>
-            </div>
-          </div>
         </div>
 
-        <div class="mt-20 border-t border-slate-800/70 pt-6 flex flex-wrap justify-between gap-4 text-xs text-slate-500 mono">
-          <span>01 — SOFTWARE ENGINEERING</span>
-          <span>02 — WEB DEVELOPMENT</span>
-          <span>03 — DATA & AI</span>
-        </div>
-      </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="py-28 px-5 sm:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="reveal mb-14">
-          <p class="mono text-xs text-sky-300 mb-3">01 / ABOUT</p>
-          <h2 class="text-4xl sm:text-5xl font-bold tracking-tight">A little about me.</h2>
-          <div class="gradient-line h-px w-28 mt-5"></div>
-        </div>
+        <div class="projects">
 
-        <div class="grid lg:grid-cols-[1.2fr_.8fr] gap-8">
-          <div class="card rounded-3xl p-7 sm:p-9 reveal">
-            <p class="text-xl sm:text-2xl leading-relaxed text-slate-200">
-              I like understanding <span class="text-sky-300">how things work</span> and then building something with that knowledge.
-            </p>
-            <p class="mt-6 text-slate-400 leading-8">
-              As a third-year Integrated M.Tech Software Engineering student at VIT Vellore,
-              I'm developing a strong foundation in programming and software engineering while
-              exploring web technologies, data analytics and artificial intelligence.
-            </p>
-            <p class="mt-4 text-slate-400 leading-8">
-              My current focus is on becoming a better engineer through hands-on projects,
-              experimentation and continuous learning.
-            </p>
-          </div>
 
-          <div class="grid gap-4 reveal">
-            <div class="card rounded-2xl p-6">
-              <div class="flex items-center gap-3">
-                <div class="p-2.5 rounded-xl bg-sky-400/10 text-sky-300"><i data-lucide="code-2"></i></div>
-                <div>
-                  <h3 class="font-semibold">Web Development</h3>
-                  <p class="text-sm text-slate-500 mt-1">Interfaces & interactive applications</p>
-                </div>
-              </div>
-            </div>
-            <div class="card rounded-2xl p-6">
-              <div class="flex items-center gap-3">
-                <div class="p-2.5 rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="bar-chart-3"></i></div>
-                <div>
-                  <h3 class="font-semibold">Data Analytics</h3>
-                  <p class="text-sm text-slate-500 mt-1">Exploring data-driven problem solving</p>
-                </div>
-              </div>
-            </div>
-            <div class="card rounded-2xl p-6">
-              <div class="flex items-center gap-3">
-                <div class="p-2.5 rounded-xl bg-sky-400/10 text-sky-300"><i data-lucide="brain-circuit"></i></div>
-                <div>
-                  <h3 class="font-semibold">AI Exploration</h3>
-                  <p class="text-sm text-slate-500 mt-1">Building practical AI-enabled experiences</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <!-- KEBO -->
 
-    <!-- SKILLS -->
-    <section id="skills" class="py-28 px-5 sm:px-8 border-y border-slate-800/50 bg-slate-950/20">
-      <div class="max-w-6xl mx-auto">
-        <div class="reveal mb-14">
-          <p class="mono text-xs text-sky-300 mb-3">02 / TOOLKIT</p>
-          <h2 class="text-4xl sm:text-5xl font-bold tracking-tight">Technologies I work with.</h2>
-          <p class="mt-5 text-slate-400 max-w-2xl leading-7">A focused toolkit I'm actively developing through coursework, projects and independent learning.</p>
-        </div>
+          <article class="project fade-in">
 
-        <div class="grid md:grid-cols-2 gap-5">
-          <div class="card rounded-3xl p-7 reveal">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="text-sky-300"><i data-lucide="braces"></i></span>
-              <h3 class="text-lg font-semibold">Programming</h3>
+            <div class="project-number">
+              01
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">Python</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">C++</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">Java</span>
-            </div>
-          </div>
 
-          <div class="card rounded-3xl p-7 reveal">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="text-violet-300"><i data-lucide="globe-2"></i></span>
-              <h3 class="text-lg font-semibold">Web Development</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">HTML5</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">CSS3</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">JavaScript</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">React</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">TypeScript</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">Tailwind CSS</span>
-            </div>
-          </div>
-
-          <div class="card rounded-3xl p-7 reveal">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="text-sky-300"><i data-lucide="database"></i></span>
-              <h3 class="text-lg font-semibold">Data & Analytics</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">Data Analytics</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">MATLAB</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">Data Visualization</span>
-            </div>
-          </div>
-
-          <div class="card rounded-3xl p-7 reveal">
-            <div class="flex items-center gap-3 mb-6">
-              <span class="text-violet-300"><i data-lucide="git-branch"></i></span>
-              <h3 class="text-lg font-semibold">Tools & Workflow</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">Git</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">GitHub</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">VS Code</span>
-              <span class="skill rounded-full px-4 py-2 text-sm text-slate-300">AI-assisted development</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="py-28 px-5 sm:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="reveal mb-14">
-          <p class="mono text-xs text-sky-300 mb-3">03 / SELECTED WORK</p>
-          <h2 class="text-4xl sm:text-5xl font-bold tracking-tight">Things I've built.</h2>
-          <p class="mt-5 text-slate-400 max-w-2xl leading-7">Two projects for now. More experiments will live here as I build them.</p>
-        </div>
-
-        <div class="space-y-6">
-          <article class="card rounded-3xl overflow-hidden reveal">
-            <div class="grid lg:grid-cols-[.9fr_1.1fr]">
-              <div class="min-h-[280px] p-8 bg-gradient-to-br from-sky-400/10 via-transparent to-violet-400/10 border-b lg:border-b-0 lg:border-r border-slate-800/70 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="mx-auto w-20 h-20 rounded-2xl border border-sky-300/20 bg-sky-300/5 flex items-center justify-center text-sky-300">
-                    <i data-lucide="bot" class="w-9 h-9"></i>
-                  </div>
-                  <p class="mono text-xs text-slate-500 mt-5">AI / CONVERSATIONAL UI</p>
-                </div>
-              </div>
-              <div class="p-8 sm:p-10">
-                <div class="project-number text-xs">PROJECT 01</div>
-                <h3 class="text-3xl font-bold mt-3">KEBO</h3>
-                <p class="text-sky-300 mt-2">AI-powered conversational companion</p>
-                <p class="text-slate-400 leading-7 mt-5">
-                  An experimental AI companion focused on creating more natural and personalized interactions.
-                  The project explores conversational interfaces, dynamic responses and integrating AI into a modern web experience.
-                </p>
-                <div class="flex flex-wrap gap-2 mt-6">
-                  <span class="skill rounded-full px-3 py-1.5 text-xs">React</span>
-                  <span class="skill rounded-full px-3 py-1.5 text-xs">TypeScript</span>
-                  <span class="skill rounded-full px-3 py-1.5 text-xs">Vite</span>
-                  <span class="skill rounded-full px-3 py-1.5 text-xs">Tailwind CSS</span>
-                </div>
-                <a href="https://github.com/pakshaya275-debug/Kebo_AI_Project" target="_blank" rel="noreferrer"
-                   class="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white hover:text-sky-300 transition">
-                  View source <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="card rounded-3xl overflow-hidden reveal">
-            <div class="grid lg:grid-cols-[1.1fr_.9fr]">
-              <div class="p-8 sm:p-10 order-2 lg:order-1">
-                <div class="project-number text-xs">PROJECT 02</div>
-                <h3 class="text-3xl font-bold mt-3">ResourceX</h3>
-                <p class="text-violet-300 mt-2">Resource distribution & management platform</p>
-                <p class="text-slate-400 leading-7 mt-5">
-                  A web-based resource management concept designed to organize resource distribution and exchange
-                  through a centralized interface, with an emphasis on practical frontend development and data presentation.
-                </p>
-                <div class="flex flex-wrap gap-2 mt-6">
-                  <span class="skill rounded-full px-3 py-1.5 text-xs">HTML5</span>
-                  <span class="skill rounded-full px-3 py-1.5 text-xs">CSS3</span>
-                  <span class="skill rounded-full px-3 py-1.5 text-xs">JavaScript</span>
-                </div>
-                <a href="https://github.com/pakshaya275-debug/ReSourceX-" target="_blank" rel="noreferrer"
-                   class="inline-flex items-center gap-2 mt-8 text-sm font-semibold text-white hover:text-violet-300 transition">
-                  View source <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
-                </a>
-              </div>
-              <div class="min-h-[280px] p-8 bg-gradient-to-br from-violet-400/10 via-transparent to-sky-400/10 order-1 lg:order-2 border-b lg:border-b-0 lg:border-l border-slate-800/70 flex items-center justify-center">
-                <div class="text-center">
-                  <div class="mx-auto w-20 h-20 rounded-2xl border border-violet-300/20 bg-violet-300/5 flex items-center justify-center text-violet-300">
-                    <i data-lucide="layout-dashboard" class="w-9 h-9"></i>
-                  </div>
-                  <p class="mono text-xs text-slate-500 mt-5">WEB / DATA / UI</p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- EDUCATION + CERTS -->
-    <section id="education" class="py-28 px-5 sm:px-8 border-y border-slate-800/50 bg-slate-950/20">
-      <div class="max-w-6xl mx-auto">
-        <div class="reveal mb-14">
-          <p class="mono text-xs text-sky-300 mb-3">04 / LEARNING</p>
-          <h2 class="text-4xl sm:text-5xl font-bold tracking-tight">Education & certifications.</h2>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-6">
-          <div class="card rounded-3xl p-8 reveal">
-            <div class="flex justify-between gap-5">
-              <div>
-                <p class="mono text-xs text-slate-500">2024 — PRESENT</p>
-                <h3 class="text-2xl font-bold mt-3">Vellore Institute of Technology</h3>
-                <p class="text-sky-300 mt-2">Integrated M.Tech — Software Engineering</p>
-              </div>
-              <div class="text-slate-500"><i data-lucide="graduation-cap"></i></div>
-            </div>
-            <div class="mt-8 pt-6 border-t border-slate-800/70">
-              <p class="text-slate-400 leading-7">Third Year · 5th Semester</p>
-              <p class="text-slate-500 text-sm mt-2">Building foundations in software engineering, programming, web development and data-oriented problem solving.</p>
-            </div>
-          </div>
-
-          <div class="space-y-4">
-            <div class="card rounded-2xl p-6 reveal">
-              <div class="flex gap-4">
-                <div class="text-sky-300 mt-1"><i data-lucide="badge-check"></i></div>
-                <div>
-                  <h3 class="font-semibold">IBM Data Analytics</h3>
-                  <p class="text-sm text-slate-500 mt-1">BharatCares</p>
-                </div>
-              </div>
-            </div>
-            <div class="card rounded-2xl p-6 reveal">
-              <div class="flex gap-4">
-                <div class="text-violet-300 mt-1"><i data-lucide="badge-check"></i></div>
-                <div>
-                  <h3 class="font-semibold">AI Workshop Certification</h3>
-                  <p class="text-sm text-slate-500 mt-1">BSERC</p>
-                </div>
-              </div>
-            </div>
-            <div class="card rounded-2xl p-6 reveal">
-              <div class="flex gap-4">
-                <div class="text-sky-300 mt-1"><i data-lucide="badge-check"></i></div>
-                <div>
-                  <h3 class="font-semibold">Data Science Using MATLAB</h3>
-                  <p class="text-sm text-slate-500 mt-1">VIT</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-10 card rounded-3xl p-7 reveal">
-          <div class="flex items-start gap-4">
-            <div class="p-3 rounded-xl bg-sky-300/10 text-sky-300"><i data-lucide="compass"></i></div>
             <div>
-              <h3 class="font-semibold text-lg">Currently exploring</h3>
-              <p class="text-slate-400 mt-2 leading-7">
-                Full-stack web development · Data analytics · AI-powered applications · Stronger software engineering fundamentals
+
+              <h3>
+                KEBO
+              </h3>
+
+              <p class="project-description">
+                An experiment in building a persistent AI
+                companion. The current prototype focuses on
+                the application experience and a
+                character-driven interface, with a
+                longer-term direction toward memory,
+                personality, emotional state and autonomous
+                behavior.
               </p>
+
+              <div class="tags">
+
+                <span class="tag">
+                  React
+                </span>
+
+                <span class="tag">
+                  TypeScript
+                </span>
+
+                <span class="tag">
+                  Tailwind CSS
+                </span>
+
+                <span class="tag">
+                  AI / LLM Concepts
+                </span>
+
+              </div>
+
             </div>
+
+            <a
+              class="project-link"
+              href="https://github.com/pakshaya275-debug/Kebo_AI_Project"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repository ↗
+            </a>
+
+          </article>
+
+
+          <!-- RESOURCE X -->
+
+          <article class="project fade-in">
+
+            <div class="project-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                ReSourceX
+              </h3>
+
+              <p class="project-description">
+                A surplus resource exchange platform designed
+                to connect donors, community recipients and
+                administrators. The current project includes
+                role-based interfaces, resource management,
+                requests, filtering and admin oversight, with
+                backend work still in progress.
+              </p>
+
+              <div class="tags">
+
+                <span class="tag">
+                  HTML5
+                </span>
+
+                <span class="tag">
+                  CSS3
+                </span>
+
+                <span class="tag">
+                  JavaScript
+                </span>
+
+                <span class="tag">
+                  UI / UX
+                </span>
+
+              </div>
+
+            </div>
+
+            <a
+              class="project-link"
+              href="https://github.com/pakshaya275-debug/ReSourceX-"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View repository ↗
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         ABOUT
+    ==================================================== -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="section-header fade-in">
+
+          <div class="section-number">
+            02 / About
           </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="py-28 px-5 sm:px-8">
-      <div class="max-w-6xl mx-auto">
-        <div class="reveal">
-          <p class="mono text-xs text-sky-300 mb-3">05 / CONTACT</p>
-          <h2 class="text-4xl sm:text-6xl font-bold tracking-tight max-w-3xl">
-            Let's build something <span class="gradient-text">worth talking about.</span>
-          </h2>
-          <p class="mt-6 text-slate-400 max-w-2xl leading-7">
-            Whether it's an opportunity, a project idea, or simply a conversation about technology,
-            I'm always happy to connect.
-          </p>
+          <div>
+
+            <h2 class="section-title">
+              A student, learning by building.
+            </h2>
+
+          </div>
+
         </div>
 
-        <div class="grid md:grid-cols-3 gap-4 mt-12">
-          <a href="mailto:pakshaya275@gmail.com" class="card rounded-2xl p-6 reveal group">
-            <i data-lucide="mail" class="text-sky-300"></i>
-            <p class="text-xs mono text-slate-500 mt-7">EMAIL</p>
-            <p class="font-semibold mt-2 break-all group-hover:text-sky-300 transition">pakshaya275@gmail.com</p>
-          </a>
-          <a href="https://www.linkedin.com/in/akshaya-p-80028a31b" target="_blank" rel="noreferrer" class="card rounded-2xl p-6 reveal group">
-            <i data-lucide="linkedin" class="text-violet-300"></i>
-            <p class="text-xs mono text-slate-500 mt-7">LINKEDIN</p>
-            <p class="font-semibold mt-2 group-hover:text-violet-300 transition">Akshaya P ↗</p>
-          </a>
-          <a href="https://github.com/pakshaya275-debug" target="_blank" rel="noreferrer" class="card rounded-2xl p-6 reveal group">
-            <i data-lucide="github" class="text-sky-300"></i>
-            <p class="text-xs mono text-slate-500 mt-7">GITHUB</p>
-            <p class="font-semibold mt-2 group-hover:text-sky-300 transition">pakshaya275-debug ↗</p>
-          </a>
+
+        <div class="about-grid">
+
+
+          <div class="about-text fade-in">
+
+            <p>
+              I’m currently pursuing an Integrated M.Tech
+              in Software Engineering at VIT Vellore.
+              I enjoy turning ideas into working interfaces
+              and using projects to understand how software
+              works beyond the classroom.
+            </p>
+
+            <p>
+              My current interests sit at the intersection
+              of web development, data analytics and AI.
+              I’m still learning, experimenting and
+              improving rather than trying to know
+              everything at once.
+            </p>
+
+          </div>
+
+
+          <div class="details fade-in">
+
+            <div class="detail">
+
+              <div class="detail-label">
+                Education
+              </div>
+
+              <div class="detail-value">
+
+                Integrated M.Tech
+                Software Engineering
+
+                <br />
+
+                VIT Vellore · 3rd Year ·
+                5th Semester
+
+              </div>
+
+            </div>
+
+
+            <div class="detail">
+
+              <div class="detail-label">
+                Interests
+              </div>
+
+              <div class="detail-value">
+                Web Development ·
+                Data Analytics · AI
+              </div>
+
+            </div>
+
+
+            <div class="detail">
+
+              <div class="detail-label">
+                Languages
+              </div>
+
+              <div class="detail-value">
+                Python · C++ · Java
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div>
+
     </section>
+
+
+    <!-- ===================================================
+         SKILLS
+    ==================================================== -->
+
+    <section id="skills">
+
+      <div class="container">
+
+        <div class="section-header fade-in">
+
+          <div class="section-number">
+            03 / Skills
+          </div>
+
+          <div>
+
+            <h2 class="section-title">
+              Things I work with.
+            </h2>
+
+            <p class="section-description">
+              A growing toolkit built through coursework,
+              projects and experimentation.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="skills-list fade-in">
+
+          <div class="skill">
+            Web Development
+          </div>
+
+          <div class="skill">
+            Python
+          </div>
+
+          <div class="skill">
+            C++
+          </div>
+
+          <div class="skill">
+            Java
+          </div>
+
+          <div class="skill">
+            Data Analytics
+          </div>
+
+          <div class="skill">
+            JavaScript
+          </div>
+
+          <div class="skill">
+            HTML & CSS
+          </div>
+
+          <div class="skill">
+            React
+          </div>
+
+          <div class="skill">
+            Git & GitHub
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CERTIFICATIONS
+    ==================================================== -->
+
+    <section id="certifications">
+
+      <div class="container">
+
+        <div class="section-header fade-in">
+
+          <div class="section-number">
+            04 / Certifications
+          </div>
+
+          <div>
+
+            <h2 class="section-title">
+              Learning beyond the curriculum.
+            </h2>
+
+            <p class="section-description">
+              Selected certifications and training
+              completed so far.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="certifications fade-in">
+
+
+          <div class="certification">
+
+            <div>
+
+              <div class="certification-name">
+                IBM Data Analytics
+              </div>
+
+              <div class="certification-provider">
+                BharatCares
+              </div>
+
+            </div>
+
+            <div class="certification-type">
+              Certification
+            </div>
+
+          </div>
+
+
+          <div class="certification">
+
+            <div>
+
+              <div class="certification-name">
+                AI Workshop
+              </div>
+
+              <div class="certification-provider">
+                BSERC
+              </div>
+
+            </div>
+
+            <div class="certification-type">
+              Certification
+            </div>
+
+          </div>
+
+
+          <div class="certification">
+
+            <div>
+
+              <div class="certification-name">
+                Data Science using MATLAB
+              </div>
+
+              <div class="certification-provider">
+                VIT
+              </div>
+
+            </div>
+
+            <div class="certification-type">
+              Certification
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         CONTACT
+    ==================================================== -->
+
+    <section id="contact">
+
+      <div class="container">
+
+        <div class="contact-grid">
+
+
+          <div class="fade-in">
+
+            <p class="eyebrow">
+              05 / Contact
+            </p>
+
+            <h2 class="contact-title">
+              Let’s connect.
+            </h2>
+
+            <p class="contact-description">
+              If you’d like to talk about a project,
+              an opportunity, or just software and
+              technology, feel free to reach out.
+            </p>
+
+          </div>
+
+
+          <div class="contact-links fade-in">
+
+
+            <a
+              class="contact-link"
+              href="mailto:pakshaya275@gmail.com"
+            >
+
+              <span>
+                Email
+              </span>
+
+              <span class="contact-arrow">
+                ↗
+              </span>
+
+            </a>
+
+
+            <a
+              class="contact-link"
+              href="https://github.com/pakshaya275-debug"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span>
+                GitHub
+              </span>
+
+              <span class="contact-arrow">
+                ↗
+              </span>
+
+            </a>
+
+
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/akshaya-p-80028a31b"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <span>
+                LinkedIn
+              </span>
+
+              <span class="contact-arrow">
+                ↗
+              </span>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
   </main>
 
-  <footer class="border-t border-slate-800/70 px-5 sm:px-8 py-8">
-    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between gap-3 text-xs text-slate-500">
-      <span>© 2026 Akshaya P.</span>
-      <span class="mono">SOFTWARE · WEB · DATA · AI</span>
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <span>
+          © 2026 Akshaya P
+        </span>
+
+        <span>
+          Built as a personal portfolio.
+        </span>
+
+      </div>
+
     </div>
+
   </footer>
 
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
   <script>
-    lucide.createIcons();
 
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    /* Mobile navigation */
 
-    menuBtn.addEventListener("click", () => {
-      const open = mobileMenu.classList.toggle("mobile-open");
-      mobileMenu.classList.toggle("hidden", !open);
-      menuBtn.setAttribute("aria-expanded", String(open));
-      menuBtn.innerHTML = open
-        ? '<i data-lucide="x"></i>'
-        : '<i data-lucide="menu"></i>';
-      lucide.createIcons();
-    });
+    const menuButton =
+      document.querySelector(".menu-button");
 
-    mobileMenu.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("mobile-open");
-        mobileMenu.classList.add("hidden");
-        menuBtn.setAttribute("aria-expanded", "false");
-        menuBtn.innerHTML = '<i data-lucide="menu"></i>';
-        lucide.createIcons();
+    const navLinks =
+      document.querySelector(".nav-links");
+
+
+    menuButton.addEventListener(
+      "click",
+      () => {
+
+        const isOpen =
+          navLinks.classList.toggle("open");
+
+        menuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+      }
+    );
+
+
+    /* Close menu after clicking a link */
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach((link) => {
+
+        link.addEventListener(
+          "click",
+          () => {
+
+            navLinks.classList.remove("open");
+
+            menuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          }
+        );
+
       });
-    });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add("show");
+
+    /* Scroll reveal */
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add(
+                  "visible"
+                );
+
+                observer.unobserve(
+                  entry.target
+                );
+
+              }
+
+            }
+          );
+
+        },
+        {
+          threshold: 0.08
+        }
+      );
+
+
+    document
+      .querySelectorAll(".fade-in")
+      .forEach((element) => {
+
+        observer.observe(element);
+
       });
-    }, { threshold: 0.12 });
 
-    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-    const sections = [...document.querySelectorAll("main section[id]")];
-    const navLinks = [...document.querySelectorAll(".nav-link")];
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        navLinks.forEach(link => link.classList.remove("active"));
-        const active = navLinks.find(link => link.getAttribute("href") === "#" + entry.target.id);
-        if (active) active.classList.add("active");
-      });
-    }, { rootMargin: "-35% 0px -55% 0px" });
-
-    sections.forEach(section => sectionObserver.observe(section));
   </script>
+
 </body>
 </html>
+
